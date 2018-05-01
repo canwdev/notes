@@ -3,55 +3,10 @@
 <link rel="stylesheet" href="Css/addStyle.css" type="text/css"/>
 ```
 
-# 清除默认CSS样式，定义文件编码
+# 修改默认CSS样式，定义文件编码
 
 ```
-/* Public */
-@charset "utf-8";
-/* CSS Document */
-
-html, body, div, p, ul, ol, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, form, input, select, button, textarea, iframe, table, th, td {
-    margin: 0;
-    padding: 0;
-}
-
-img {
-    border: 0 none;
-    vertical-align: top;
-}
-
-ul, li, dl, dd, dt {
-    list-style-type: none;
-}
-
-i, em, cite {
-    font-style: normal;
-}
-
-body {
-    -webkit-text-size-adjust: none; /* 谷歌不支持12px以下字号 */
-    font-family: "微软雅黑";
-}
-
-a {
-    text-decoration: none;
-}
-
-.clear, .cle {
-    clear: both;
-}
-
-a, area {
-    blr: expression(this.onFocus=this.blur())
-}
-
-/*  去掉IE下链接虚线框 */
-a:focus {
-    outline: none;
-}
-
-/* 去掉火狐下链接虚线框 */
-/* end_Public */
+@charset "utf-8";body,button,dd,div,dl,dt,form,h1,h2,h3,h4,h5,h6,html,iframe,input,li,ol,p,select,table,td,textarea,th,ul{margin:0;padding:0}img{border:0 none;vertical-align:top}dd,dl,dt,li,ul{list-style-type:none}cite,em,i{font-style:normal}body{font-family:"微软雅黑";-webkit-text-size-adjust:none}a{text-decoration:none}.cle,.clear{clear:both}a,area{blr:expression(this.onFocus=this.blur())}a:focus{outline:0}
 ```
 
 
