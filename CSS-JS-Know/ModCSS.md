@@ -141,3 +141,11 @@ p:after {
 ```
 transform: scale(2.0);
 ```
+
+# 禁止选择
+```css
+.article-holder.unable-reprint {
+    user-select: none;
+    -webkit-user-select: none;
+}
+```
