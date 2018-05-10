@@ -160,4 +160,6 @@ transform: scale(2.0);
 
 ## CSS实现垂直居中
 
-![DEMO](res)
+![DEMO](res/CSS垂直居中方案1.png)
+![DEMO](res/CSS垂直居中方案2.png)
+![DEMO](res/CSS垂直居中方案3.png)
