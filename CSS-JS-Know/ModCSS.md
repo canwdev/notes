@@ -1,44 +1,43 @@
-# 外部调用CSS的写法
+## 外部调用CSS的写法
+
 ```html
 <link rel="stylesheet" href="Css/addStyle.css" type="text/css"/>
 ```
 
-# 修改默认CSS样式，定义文件编码
+## 修改默认CSS样式，定义文件编码
 
-```
-@charset "utf-8";body,button,dd,div,dl,dt,form,h1,h2,h3,h4,h5,h6,html,iframe,input,li,ol,p,select,table,td,textarea,th,ul{margin:0;padding:0}img{border:0 none;vertical-align:top}dd,dl,dt,li,ul{list-style-type:none}cite,em,i{font-style:normal}body{font-family:"微软雅黑";-webkit-text-size-adjust:none}a{text-decoration:none}.cle,.clear{clear:both}a,area{blr:expression(this.onFocus=this.blur())}a:focus{outline:0}
-```
+[normalize.css](res/normalize.css)
 
+## 兼容ie9以及EDGE
 
-# 兼容ie9
-
-```
+```html
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE">
 ```
 
+## 适应移动设备以及允许缩放
 
-# 移动设备允许缩放
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=yes">
 ```
 
-# 在CSS中引入外部CSS
+## 在CSS中引入外部CSS
+
 ```css
 @import url("animate.css");
 ```
 
+## 点击穿透
 
-
-# 点击穿透
 ```css
 .demo {
     pointer-events: none;
 }
 ```
 
-# 内部边框
+## 内部边框
+
 ```css
-.contact_banner, .about_banner, .news_banner {
+.contact_banner {
     border: 42px solid #ff674d;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -46,57 +45,55 @@
 }
 ```
 
+## checkbox勾选后文字变色
 
-# checkbox勾选后文字变色
 ```css
-.time_con ul li input[type=checkbox]:checked+.cb-label{  
-	background: #f58612;
+.time_con ul li input[type=checkbox]:checked+.cb-label{
+    background: #f58612;
 }
 .time_con ul li input[type=checkbox]:checked+.cb-label+.time_info{
-	color: #f58612;
+    color: #f58612;
 }
 ```
 
+## 偶数显示背景色
 
-
-# 偶数显示背景色
 ```css
-.nnews_lb_m:nth-of-type(even) {
+.news-list:nth-of-type(even) {
     background-color: #fafafa;
 }
 ```
 
+## 大写字母
 
-# 大写字母
 ```css
 h1 {text-transform:uppercase}
 h2 {text-transform:capitalize}
 p {text-transform:lowercase}
 ```
 
+## 自然段缩进2个空格
 
-# 自然段缩进2个空格
 ```css
 .demo {
  text-indent:2em;
 }
 ```
- 
- 
-# CSS在前面和后面追加内容
+
+## CSS在前面和后面追加内容
+
 ```css
 #xn_n_18_navHome>a:before {
     content:'HOME';
 }
 
-p:after { 
+p:after {
     content:"台词：";
 }
 ```
 
+## 切字，多的字显示“...”
 
-
-# 切字，多的字显示“...”
 ```css
 .xn_c_34_lbenname {
     overflow: hidden;
@@ -106,7 +103,8 @@ p:after {
 }
 ```
 
-# input 选中（:focus）边框
+## input 选中（:focus）边框
+
 ```css
 .demo {
     outline-color: rgb(77, 144, 254);
@@ -129,23 +127,33 @@ p:after {
 }
 ```
 
+## textarea 固定大小
 
-# textarea 固定大小 
 `resize: none;`
 
-# 点击按钮不提交刷新页面
+## 点击按钮不提交刷新页面
+
 `<button type="button">提交</button>`
 
+## 使元素变大
 
-# 鼠标拂过变大
-```
+```css
 transform: scale(2.0);
 ```
 
-# 禁止鼠标选择
+## 禁止鼠标选择
+
 ```css
 .article-holder.unable-reprint {
     user-select: none;
     -webkit-user-select: none;
 }
 ```
+
+## CSS实现水平居中的几种方式
+
+![DEMO](res/CSS水平居中方案1.png)
+![DEMO](res/CSS水平居中方案2.png)
+![DEMO](res/CSS水平居中方案3.png)
+![DEMO](res/CSS水平居中方案4.png)
+![DEMO](res/CSS水平居中方案5.png)
