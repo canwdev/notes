@@ -150,10 +150,14 @@ transform: scale(2.0);
 }
 ```
 
-## CSS实现水平居中的几种方式
+## CSS实现水平居中
 
 ![DEMO](res/CSS水平居中方案1.png)
 ![DEMO](res/CSS水平居中方案2.png)
 ![DEMO](res/CSS水平居中方案3.png)
 ![DEMO](res/CSS水平居中方案4.png)
 ![DEMO](res/CSS水平居中方案5.png)
+
+## CSS实现垂直居中
+
+![DEMO](res)
