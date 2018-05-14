@@ -15,6 +15,10 @@
 
 - [手机首页显示产品列表](ea_c/m-home-list-prod.md)
 - [无限横向滚动轮播](ea_c/endless-x-scroll.md)
+- [伪3D三联装图片轮播](ea_c/eims-3d-slide.md)
+- [首页关于我们&视频](ea_c/indexpage-aboutus-video.md)
+- [首页产品列表](ea_c/indexpage-prodlist.md)
+- [首页新闻列表（带tab切换）](ea_c/indexpage-newslist.md)
 
 ---
 

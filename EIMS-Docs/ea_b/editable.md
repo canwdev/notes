@@ -3,11 +3,11 @@
 ## 全局可编辑区域
 
 ```html
-<!--ea_span_t_name1|--><span name="_t_name1|">全局可编辑区</span><!--ea_span_t_name1|-->
+<!--ea_span_ename1|--><span name="_ename1|">全局可编辑区</span><!--ea_span_ename1|-->
 ```
 
 ## 可编辑区域
 
 ```html
-<!--ea_span_yourname1--><span name="_yourname1">可编辑区</span><!--ea_span_yourname1-->
+<!--ea_span_ename01--><span name="_ename01">可编辑区</span><!--ea_span_ename01-->
 ```

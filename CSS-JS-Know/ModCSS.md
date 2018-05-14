@@ -163,3 +163,9 @@ transform: scale(2.0);
 ![DEMO](res/CSS垂直居中方案1.png)
 ![DEMO](res/CSS垂直居中方案2.png)
 ![DEMO](res/CSS垂直居中方案3.png)
+
+## CSS居中
+
+![DEMO](res/CSS居中方案1.png)
+![DEMO](res/CSS居中方案2.png)
+![DEMO](res/CSS居中方案3.png)

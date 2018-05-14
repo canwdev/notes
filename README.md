@@ -12,7 +12,8 @@
 ## 页面特效
 
 - [刮刮乐](Effects/swipeHappy.html)
-- [3D轮播特效](Effects/slide-3d/index.html)
+- [3D轮播特效（有抖动bug）](Effects/slide-3d-bug/index.html)
+- [3D轮播特效（3张图）](Effects/slide-3d/index.html)
 
 ## 教程
 

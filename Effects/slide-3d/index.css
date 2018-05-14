@@ -1,83 +1,66 @@
-body {
-    background-color: rgb(139, 139, 139);
+
+/*3D轮播*/
+li {
+    list-style: none;
 }
 
-/* focus_Box */
-
-#focus_Box {
-    position: relative;
-    height: 440px;
-    margin: 20px auto;
-    width: 1280px;
-}
-
-#focus_Box ul {
+.poster-main {
+    width: 640px;
+    height: 270px;
     position: relative;
 }
 
-#focus_Box li {
-    z-index: 0;
+.poster-main .poster-btn {
+    width: 100px;
+    height: 270px;
     position: absolute;
-    background: #000000;
-    top: 146px;
+    top: 0;
     cursor: pointer;
-    left: 377px;
-    border-radius: 4px;
-    box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.5);
-    overflow: hidden;
 }
 
-#focus_Box li img {
+.poster-info {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 15%;
+}
+
+.poster-main .poster-prev-btn {
+    left: -100px;
+    width: 359px !important;
+    background: url('res/left.png') no-repeat;
+    background-position: left center;
+}
+
+.poster-main .poster-next-btn {
+    right: -100px;
+    width: 359px !important;
+    background: url('res/right.png') no-repeat;
+    background-position: right center;
+}
+
+.poster-main .poster-list .list-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.5);
+}
+
+.list-item a,
+.list-item a img {
+    display: block;
     width: 100%;
     height: 100%;
-    vertical-align: top
+    border: 0;
 }
 
-#focus_Box li .img_content {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 230px;
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.49);
-    padding: 10px;
-    display: none;
+.list-item a img:last-child {
+    width: 119px;
+    height: 119px;
 }
 
-.img_content h4 {
-    text-align: center;
-    font-size: 20px;
-    line-height: 30px;
-    font-weight: normal;
+/*3D轮播*/
+.imagescroll {
+    width: 850px;
+    margin: 40px auto;
 }
-
-.img_content p {
-    font-size: 16px;
-    line-height: 25px;
-    text-indent: 2em;
-}
-
-#focus_Box .prev,
-#focus_Box .next {
-    display: block;
-    z-index: 100;
-    overflow: hidden;
-    cursor: pointer;
-    position: absolute;
-    width: 30px;
-    height: 57px;
-    top: 194px;
-}
-
-#focus_Box .prev {
-    background: url('res/arr_left.png') no-repeat;
-    left: 0px
-}
-
-#focus_Box .next {
-    background: url('res/arr_right.png') no-repeat;
-    right: 0px
-}
-
-/* focus_Box */
