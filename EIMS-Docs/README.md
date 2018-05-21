@@ -19,6 +19,7 @@
 - [首页关于我们&视频](ea_c/indexpage-aboutus-video.md)
 - [首页产品列表](ea_c/indexpage-prodlist.md)
 - [首页新闻列表（带tab切换）](ea_c/indexpage-newslist.md)
+- [类别到内容筛选](ea_c/type-item-filter.md)
 
 ---
 
