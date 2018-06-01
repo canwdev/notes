@@ -1,3 +1,5 @@
+# JS用法收集
+
 ## 如何批量修改（追加）页面底部的JS
 
 使用Sublime，Ctrl+Shift+F，第一个参数`</html>`，第二个参数`<open folders>`，第三个参数：
@@ -107,7 +109,7 @@ document.ready = function () {}
 $(document).ready(function(){})
 ```
 
-## 土制链接解析器
+## 土制链接解析器（有斜杠bug，别用。）
 
 ```js
 var link = 'https://www.example.com/test?arg1=123&argb=456';

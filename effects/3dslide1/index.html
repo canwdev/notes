@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>旋转木马</title>
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+<body>
+<div class="wrap">
+	<div class='poster-main carousel' data-setting='{
+	         "width":800,
+             "height":469,
+             "posterWidth":332,
+             "posterHeight":469,
+             "verticalAlign":"middle",
+             "autoPlay":true,
+             "speed":1000,
+             "delay":1000,
+             "scale":0.9
+	}'>
+	<div class='poster-btn poster-prev-btn'></div>
+	<ul class='poster-list'>
+		<li class="list-item"><a href="#"><img src="./image/05.jpg" alt=""></a></li>
+		<li class="list-item"><a href="#"><img src="./image/09.jpg" alt=""></a></li>
+		<li class="list-item"><a href="#"><img src="./image/04.jpg" alt=""></a></li>
+	</ul>
+		<div class='poster-btn poster-next-btn'></div>
+	</div>
+
+ 
+
+</div>
+</body>
+<script src="js/jquery-1.7.2.min.js"></script>
+<script src="js/carousel.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+	$(function(){
+        Carousel.init($('.carousel'));
+	})
+</script>
+</html>
+

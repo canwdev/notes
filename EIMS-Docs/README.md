@@ -20,6 +20,7 @@
 - [首页产品列表](ea_c/indexpage-prodlist.md)
 - [首页新闻列表（带tab切换）](ea_c/indexpage-newslist.md)
 - [类别到内容筛选](ea_c/type-item-filter.md)
+- [产品products页面内容带分页](ea_c/products-with-fy.md)
 
 ---
 
