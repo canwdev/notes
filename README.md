@@ -17,3 +17,5 @@
 
 - [在Ubuntu安装GitLab（空）](manual/ubuntu-install-gitlab.md)
 - [Windows路由表配置：双网卡同时上公司内外网](manual/windows-dual-link-setup.md)
+- [入门Cordova](manual/setup-cordova.md)
+- [入门less](manual/setup-less.md)
