@@ -94,7 +94,9 @@ p:after {
 }
 ```
 
-## 切字，多的字显示“...”
+## 限制文字长度，多的字显示“...”
+
+![限制文字长度](res\CSS限制文字长度的方法.png)
 
 ```css
 .xn_c_34_lbenname {
@@ -209,9 +211,28 @@ a:active {
 </head>
 <body>
     <!--[if lte IE8]>
-        <p class="update-browser">您使用的浏览器版本较低，可能存在
-            <strong>严重的安全隐患</strong>，建议<a href="http://browsehappy.osfipin.com/" target="_blank">立即升级</a>浏览器。
+        <p class="update-browser">您使用的浏览器版本较低，可能存在严重的安全隐患或导致页面显示异常，建议<a href="http://browsehappy.osfipin.com/" target="_blank">立即升级</a>浏览器。
         </p>
     <![endif]-->
 </body>
 ```
+
+## 媒体查询
+
+```css
+@media only screen and (max-width: 800px) {
+/* 最大屏幕限制：800px，小于该分辨率的使用此样式 */
+}
+@media only screen and (min-width: 481px) and (max-width: 800px) {
+/* 屏幕宽度在：481~800px之间 */
+}
+@media only screen and (max-width: 480px) {
+/* 最大屏幕限制：480px，小于该分辨率的使用此样式 */
+}
+```
+
+## rem/em 单位
+
+![fontSize](res\html-font-size.png)
+![rem](res\rem.png)
+![em](res\em.png)
