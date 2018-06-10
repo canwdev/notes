@@ -171,3 +171,47 @@ transform: scale(2.0);
 ![DEMO](res/CSS居中方案1.png)
 ![DEMO](res/CSS居中方案2.png)
 ![DEMO](res/CSS居中方案3.png)
+
+## webkit 移动设备点击覆盖颜色
+
+```css
+a:active {
+    -webkit-tap-highlight-color: rgba(255, 166, 0, 0.555);
+}
+```
+
+## 鼠标选择文字的背景色
+
+```css
+::selection {
+    background-color: rgba(255, 166, 0, 0.555);
+    text-shadow: none;
+}
+```
+
+## IE浏览器"兼容"代码
+
+```html
+<head>
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!--[if lt IE 9]>
+  <script>
+    var tip = '建议升级您的浏览器（如 Chrome, Firefox）以获得更好的体验！',
+        url = 'http://browsehappy.com';
+    document.execCommand('stop');
+    alert(tip);
+    window.location.href = url;
+  </script>
+<![endif]-->
+</head>
+<body>
+    <!--[if lte IE8]>
+        <p class="update-browser">您使用的浏览器版本较低，可能存在
+            <strong>严重的安全隐患</strong>，建议<a href="http://browsehappy.osfipin.com/" target="_blank">立即升级</a>浏览器。
+        </p>
+    <![endif]-->
+</body>
+```
