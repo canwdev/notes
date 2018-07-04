@@ -247,6 +247,6 @@ a:active {
 
 ## rem/em 单位
 
-![fontSize](res\html-font-size.png)
-![rem](res\rem.png)
-![em](res\em.png)
+![fontSize](res/html-font-size.png)
+![rem](res/rem.png)
+![em](res/em.png)
