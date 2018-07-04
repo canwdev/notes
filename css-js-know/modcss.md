@@ -3,14 +3,17 @@
 ## 外部调用CSS的写法
 
 ```html
-<link rel="stylesheet" href="Css/addStyle.css" type="text/css"/>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+
+<!-- HTML5写法 -->
+<link rel="stylesheet" href="style.css">
 ```
 
 ## 修改默认CSS样式，定义文件编码
 
 [normalize.css](res/normalize.css)
 
-## 兼容ie9以及EDGE
+## 告诉IE浏览器使用最新的IE内核渲染页面
 
 ```html
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE">
@@ -36,7 +39,7 @@
 }
 ```
 
-## 内部边框
+## 内部边框（怪异盒模型）
 
 ```css
 .contact_banner {
@@ -47,7 +50,7 @@
 }
 ```
 
-## checkbox勾选后文字变色
+## checkbox勾选后文字变色选择器
 
 ```css
 .time_con ul li input[type=checkbox]:checked+.cb-label{
@@ -78,7 +81,7 @@ p {text-transform:lowercase}
 
 ```css
 .demo {
- text-indent:2em;
+    text-indent:2em;
 }
 ```
 
@@ -115,7 +118,8 @@ p:after {
 }
 
 .con3input:focus,.con3texta:focus {
-    border-color: #ffe345
+    border-color: #FFEB3B;
+    outline-color: #FFEB3B;
 }
 ::-webkit-input-placeholder { /* WebKit browsers */
     color: #ffffff;
@@ -174,7 +178,17 @@ transform: scale(2.0);
 ![DEMO](res/CSS居中方案2.png)
 ![DEMO](res/CSS居中方案3.png)
 
-## webkit 移动设备点击覆盖颜色
+## CSS3 img 元素自适应
+
+```css3
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+```
+
+## webkit 移动设备点击时的覆盖颜色
 
 ```css
 a:active {

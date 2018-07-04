@@ -2,11 +2,11 @@
 
 ## 如何批量修改（追加）页面底部的JS
 
-使用Sublime，Ctrl+Shift+F，第一个参数`</html>`，第二个参数`<open folders>`，第三个参数：
+使用Sublime，Ctrl+Shift+F，第一个参数`</body>`，第二个参数`<open folders>`，第三个参数：
 
 ```html
 <script type="text/javascript" src="Js/addEffects.js"></script>
-</html>
+</body>
 ```
 
 ## 改链接
