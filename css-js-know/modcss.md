@@ -250,3 +250,19 @@ a:active {
 ![fontSize](res\html-font-size.png)
 ![rem](res\rem.png)
 ![em](res\em.png)
+
+## .clearfix 清除浮动
+
+清楚浮动主要有两种实现方式，一种是`overflow:hidden`，但最好的方式还是使用下面这种。
+
+```css
+.clearfix::before,
+.clearfix::after {
+    content: ' ';
+    display: table;
+}
+
+.clearfix::after {
+    clear: both;
+}
+```
