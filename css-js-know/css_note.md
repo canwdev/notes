@@ -1,17 +1,31 @@
 # CSS 用法收集
 
+## HTML5
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+```
+
 ## 外部调用CSS的写法
 
 ```html
 <link rel="stylesheet" type="text/css" href="style.css"/>
 
-<!-- HTML5写法 -->
+<!-- 一种标准的写法 -->
 <link rel="stylesheet" href="style.css">
 ```
 
-## 修改默认CSS样式，定义文件编码
-
-[normalize.css](res/normalize.css)
 
 ## 告诉IE浏览器使用最新的IE内核渲染页面
 
@@ -266,3 +280,12 @@ a:active {
     clear: both;
 }
 ``` 
+
+## 去除input账号密码自动填充的黄色背景
+
+```css
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+    -webkit-text-fill-color: #313a69 !important;
+}
+```

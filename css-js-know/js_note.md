@@ -105,7 +105,6 @@ window.onload = function(){};
 $(window).load(function() {});
 
 // 页面框架加载完成后执行
-document.ready = function () {}
 $(document).ready(function(){})
 ```
 
@@ -131,4 +130,13 @@ for (var i=0;i<args.length;i++) {
   attr[temp[0]] = temp[1];
 }
 console.log(attr);      // Object { arg1: "123", argb: "456" }
+```
+
+## JavaScript对象复制
+
+```js
+var oldObj = {
+    aa:1
+}
+var newObj = Object.assign({}, oldObj)
 ```
