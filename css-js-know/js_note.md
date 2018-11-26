@@ -152,3 +152,13 @@ var newObj = Object.assign({}, oldObj)
     <![endif]-->
 
 ```
+
+## 页面跳转
+
+```html
+<meta http-equiv="refresh" content="0;http://www.bing.com"/>
+```
+
+```js
+location.href="/"
+```
