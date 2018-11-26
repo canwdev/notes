@@ -58,6 +58,12 @@
     .photo {
       /* -webkit-mask-image: url('mask.png'); */
       width: 500px;
+      -webkit-mask: url('mask.png');
+      -webkit-mask-size: 100% 100%;
+    }
+
+    .photo1 {
+      width: 500px;
       -webkit-mask: url('mask2.png');
       -webkit-mask-size: 100% 100%;
     }
@@ -136,7 +142,11 @@
   <hr>
 
   <div class="photo-wrap">
-    <img src="photo2.png" class="photo">
+    <img src="photo.jpg" class="photo">
+  </div>
+
+  <div class="photo-wrap">
+    <img src="photo2.png" class="photo1">
   </div>
 
   <div class="photo-wrap">
