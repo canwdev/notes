@@ -162,3 +162,32 @@ var newObj = Object.assign({}, oldObj)
 ```js
 location.href="/"
 ```
+
+## Google Analysis
+
+```html
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-#########-#"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-#########-#');
+</script>
+```
+
+```js
+// --gg--
+$(document).ready(function(){
+  var ga = document.createElement('script');
+  ga.type = 'text/javascript';
+  ga.async = true;
+  ga.src = 'https://www.googletagmanager.com/gtag/js?id=UA-#########-#';
+  document.body.append(ga);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-#########-#');
+})
+```
