@@ -191,3 +191,8 @@ $(document).ready(function(){
   gtag('config', 'UA-#########-#');
 })
 ```
+
+```js
+// min
+$(document).ready(function(){function b(){dataLayer.push(arguments)}var a=document.createElement("script");a.type="text/javascript";a.async=!0;a.src="https://www.googletagmanager.com/gtag/js?id=UA-#########-#";document.body.append(a);window.dataLayer=window.dataLayer||[];b("js",new Date);b("config","UA-#########-#")});
+```
