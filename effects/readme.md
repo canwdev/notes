@@ -1,4 +1,11 @@
-# JavaScript(ES5) jQuery 相关组件库
+# JavaScript/jQuery Effects
+
+- [js二维码扫描](jsqrscanner/index.html)
+- [用css画出各种弧度的边框，以及mask的使用](border-radius/index.html)
+- [ie浏览器提示页面](noie/noie.html)
+- [微信浏览器提示从外部打开](noie/nowxbrowser.js)
+
+---
 
 ## Canvas 特效
 
