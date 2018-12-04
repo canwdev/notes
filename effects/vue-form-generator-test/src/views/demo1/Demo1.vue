@@ -1,26 +1,23 @@
 <template>
-  <div class="root">
-    <h1 class="text-center">Demo of vue-form-generator</h1>
-    <div class="container" id="app">
-      <div class="panel panel-default">
-        <div class="panel-heading">Form</div>
-        <div class="panel-body">
-          <vue-form-generator :schema="schema" :model="model" :options="formOptions"></vue-form-generator>
-        </div>
+  <div class="container" id="app">
+    <div class="panel panel-default">
+      <div class="panel-heading">Form</div>
+      <div class="panel-body">
+        <vue-form-generator :schema="schema" :model="model" :options="formOptions"></vue-form-generator>
       </div>
+    </div>
 
-      <div class="panel panel-default">
-        <div class="panel-heading">Model</div>
-        <div class="panel-body">
-          <pre v-if="model" v-html="prettyJSON(model)"></pre>
-        </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Model</div>
+      <div class="panel-body">
+        <pre v-if="model" v-html="prettyJSON(model)"></pre>
       </div>
+    </div>
 
-      <div class="panel panel-default">
-        <div class="panel-heading">Schema</div>
-        <div class="panel-body">
-          <pre v-if="model" v-html="prettyJSON(schema)"></pre>
-        </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Schema</div>
+      <div class="panel-body">
+        <pre v-if="model" v-html="prettyJSON(schema)"></pre>
       </div>
     </div>
   </div>
@@ -29,6 +26,7 @@
 <script>
 import Vue from "vue";
 import VueFormGenerator from "vue-form-generator";
+import Util from "../../assets/util.js";
 
 Vue.use(VueFormGenerator);
 
@@ -135,40 +133,14 @@ export default {
     };
   },
   methods: {
-    prettyJSON: function(json) {
-      if (json) {
-        json = JSON.stringify(json, undefined, 4);
-        json = json
-          .replace(/&/g, "&")
-          .replace(/</g, "<")
-          .replace(/>/g, ">");
-        return json.replace(
-          /("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g,
-          function(match) {
-            var cls = "number";
-            if (/^"/.test(match)) {
-              if (/:$/.test(match)) {
-                cls = "key";
-              } else {
-                cls = "string";
-              }
-            } else if (/true|false/.test(match)) {
-              cls = "boolean";
-            } else if (/null/.test(match)) {
-              cls = "null";
-            }
-            return '<span class="' + cls + '">' + match + "</span>";
-          }
-        );
-      }
-    }
+    prettyJSON: Util.prettyJSON
   }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-@import url(vfg.css);
+@import url(/vfg.css);
 html {
   font-family: Tahoma;
   font-size: 14px;
