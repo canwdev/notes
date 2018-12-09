@@ -1,0 +1,81 @@
+.w-theme ul {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  overflow: hidden;
+}
+
+.w-theme ul>li {
+  width: 95%;
+  height: 94px;
+  margin: 10px auto;
+  overflow: hidden;
+  position: relative;
+
+  background: linear-gradient(106deg, #81EFFF, #52F3AD);
+  text-align: center;
+  font-size: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px 0px rgba(148, 148, 148, 0.28);
+}
+
+.w-theme ul>li:nth-child(1n) {
+  background: linear-gradient(106deg, #FFD181, #F37553);
+}
+.w-theme ul>li:nth-child(2n) {
+  background: linear-gradient(106deg, #C0F46F, #FFBE4E);
+}
+.w-theme ul>li:nth-child(3n) {
+  background: linear-gradient(106deg, #81FFC8, #CAF56E);
+}
+.w-theme ul>li:nth-child(4n) {
+  background: linear-gradient(106deg, #81E0FF, #52F38B);
+}
+.w-theme ul>li:nth-child(5n) {
+  background: linear-gradient(106deg, #818DFF, #52CBF3);
+}
+.w-theme ul>li:nth-child(6n) {
+  background: linear-gradient(106deg, #A781FF, #6E8EF5);
+}
+
+.w-theme ul>li>a {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-weight: 400;
+  color: #fff;
+  background: url("node_bg.png") no-repeat;
+  background-size: 50%;
+  background-position: 103% 53%;
+}
+
+.w-theme ul>li>a>.title {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-52%);
+  font-size: 25px;
+}
+
+.w-theme ul>li>a>.value {
+  font-size:50px;
+  font-weight:bold;
+  color:rgba(255,255,255,1);
+  position: absolute;
+  top: 50%;
+  left: 68%;
+  transform: translateY(-50%);
+}
+
+.w-theme ul>li>a::before {
+  content: "#";
+  position: absolute;
+  top: 46%;
+  left: 70%;
+  transform: translateY(-50%);
+  font-size: 100px;
+  font-weight: bold;
+  color: rgba(255,255,255,1);
+  opacity: 0.4;
+}

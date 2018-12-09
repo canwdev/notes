@@ -5,29 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Bscroll 上下拉Demo</title>
   <style>
     body {
       margin: 0;
-    }
-
-    .scroll-root ul {
-      list-style: none;
-      margin: 0;
-      padding-left: 0;
-    }
-
-    .scroll-root ul>li {
-      padding: 10px;
-      box-sizing: border-box;
-    }
-
-    .scroll-root ul>li+li {
-      /* border-top: 1px solid #ccc */
-    }
-
-    .scroll-root ul>li:nth-child(2n) {
-      background: #ccc
+      background: #ccc;
     }
 
     #wrapper {
@@ -37,51 +19,215 @@
       right: 0;
       bottom: 0;
     }
+
+    .scroll-content {
+      position: relative;
+      background: #fff;
+    }
+
+    .scroll-content .tooltip {
+      text-align: center;
+      line-height: 45px;
+      background: #fff;
+    }
+
+    .scroll-content .tooltip-top {
+      position: absolute;
+      top: -45px;
+      width: 100%
+    }
+
+    .scroll-content .tooltip-bottom {
+      position: absolute;
+      bottom: -45px;
+      width: 100%;
+    }
+
+    .scroll-content ul {
+      list-style: none;
+      margin: 0;
+      width: 100%;
+      padding-left: 0;
+    }
+
+    .scroll-content ul>li {
+      height: 100px;
+    }
+
+    .scroll-content ul>li+li {
+      /* border-top: 1px solid #ccc */
+    }
+
+    .floatip {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      line-height: 45px;
+      text-align: center;
+      color: #fff;
+      background: rgba(76, 175, 80, 0.77);
+      display: none;
+    }
+
+    .floatip.tip-bottom {
+      bottom: 0;
+      top: unset;
+    }
   </style>
+  <link rel="stylesheet" href="theme/theme.css">
 </head>
 
 <body>
   <div class="scroll-root" id="wrapper">
-    <ul id="scroller">
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-      <li>4</li>
-      <li>5</li>
-      <li>6</li>
-      <li>7</li>
-      <li>8</li>
-      <li>9</li>
-      <li>10</li>
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-      <li>4</li>
-      <li>5</li>
-      <li>6</li>
-      <li>7</li>
-      <li>8</li>
-      <li>9</li>
-      <li>10</li>
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-      <li>4</li>
-      <li>5</li>
-      <li>6</li>
-      <li>7</li>
-      <li>8</li>
-      <li>9</li>
-      <li>10</li>
-    </ul>
+    <div class="scroll-content w-theme">
+      <div class="tooltip tooltip-top refreshtip-hook">下拉刷新</div>
+      <ul>
+        <li>
+          <a href="###">
+            <span class="title">套餐</span>
+            <span class="value">A</span>
+          </a>
+        </li>
+        <li>
+          <a href="###">
+            <span class="title">套餐</span>
+            <span class="value">B</span>
+          </a>
+        </li>
+        <li>
+          <a href="###">
+            <span class="title">套餐</span>
+            <span class="value">C</span>
+          </a>
+        </li>
+        <li>
+          <a href="###">
+            <span class="title">套餐</span>
+            <span class="value">D</span>
+          </a>
+        </li>
+        <li>
+          <a href="###">
+            <span class="title">套餐</span>
+            <span class="value">E</span>
+          </a>
+        </li>
+        <li>
+          <a href="###">
+            <span class="title">套餐</span>
+            <span class="value">F</span>
+          </a>
+        </li>
+      </ul>
+      <div class="tooltip tooltip-bottom loadmoretip-hook">上拉加载更多...</div>
+    </div>
   </div>
 
+  <div class="floatip floatip-hook">正在加载...</div>
+
   <script src="./better_scroll/bscroll.min.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/1.8.3/jquery.min.js"></script>
+
+
   <script>
-    const scroll = new BScroll('#wrapper', {
+    // DOM对象
+    var floatip = $('.floatip-hook');
+    var refreshtip = $('.refreshtip-hook');
+    var loadmoretip = $('.loadmoretip-hook');
+    var scrollul = $('.scroll-content ul');
+
+    // 复制列表，使其在长屏幕上可以滑动
+    var lis = $('.scroll-content ul>li');
+    $('.scroll-content ul').append(lis.clone());
+
+    // 滑动常量
+    var MAX_PULL_RANGE = 100;
+
+    // 创建bscroll对象
+    var bScroll = new BScroll('#wrapper', {
       scrollY: true,
-      click: true
+      click: true,
+      probeType: 2 // 滑动时派发事件
     })
+
+    // 滑动中
+    bScroll.on('scroll', function (pos) {
+      console.log(pos.y, this.maxScrollY)
+
+      if (pos.y > MAX_PULL_RANGE) {
+        refreshtip.text('释放立即刷新');
+      } else if (pos.y < (this.maxScrollY - MAX_PULL_RANGE)) {
+        loadmoretip.text('释放立即刷新');
+      } else {
+        refreshtip.text('下拉刷新');
+        loadmoretip.text('上拉加载更多...');
+      }
+    })
+
+    // 滑动结束（手指离开屏幕）
+    bScroll.on('touchEnd', function (pos) {
+      if (pos.y > MAX_PULL_RANGE) {
+        floatip.showTips('正在刷新...', -1);
+        // 此处进行刷新操作
+        setTimeout(function() {
+          location.reload()
+        }, 1000)
+      } else if (pos.y < (this.maxScrollY - MAX_PULL_RANGE)) {
+        floatip.showTips('加载中...', -1, true);
+
+        loadData(function () {
+          floatip.showTips('OK', 0, true);
+          // 刷新列表后,重新计算滚动区域高度
+          bScroll.refresh();
+          bScroll.scrollTo(0, bScroll.maxScrollY, 300);
+        })
+      }
+    })
+
+    // MOCK 加载数据
+    function loadData(callback) {
+      setTimeout(() => {
+
+        let lis = '';
+        for (let i = 0; i < 3; i++) {
+          random = Math.floor(Math.random() * 10);
+          lis +=
+            `<li>
+          <a href="###">
+            <span class="title">MOCK</span>
+            <span class="value">${random}</span>
+          </a>
+        </li>`
+            .trim();
+        }
+        scrollul.append(lis);
+
+        // 操作完成执行回调函数，是一种闭包的使用方式
+        callback();
+      }, 1000);
+    }
+
+    // 刷新成功提示方法
+    floatip.showTips = function (text, time, isBottom) {
+      var _this = this;
+      text = text || '提示';
+      time = time || 1000;
+
+      if (isBottom) {
+        _this.addClass('tip-bottom')
+      } else {
+        _this.removeClass('tip-bottom')
+      }
+      _this.text(text);
+      _this.slideDown();
+
+      if (time >= 0) {
+        setTimeout(function () {
+          _this.slideUp()
+        }, time);
+      }
+    }
   </script>
 </body>
 
