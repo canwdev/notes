@@ -196,3 +196,8 @@ $(document).ready(function(){
 // min
 $(document).ready(function(){function b(){dataLayer.push(arguments)}var a=document.createElement("script");a.type="text/javascript";a.async=!0;a.src="https://www.googletagmanager.com/gtag/js?id=UA-#########-#";document.body.append(a);window.dataLayer=window.dataLayer||[];b("js",new Date);b("config","UA-#########-#")});
 ```
+
+## 获取该元素相对于视口的坐标
+```js
+let rect = Element.getBoundingClientRect()
+```
