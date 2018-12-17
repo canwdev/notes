@@ -132,6 +132,17 @@ for (var i=0;i<args.length;i++) {
 console.log(attr);      // Object { arg1: "123", argb: "456" }
 ```
 
+## 链接参数解析器
+
+```js
+if (location.search) {
+    var search = location.search.substring(1);
+    var obj = JSON.parse('{"' + search.replace(/&/g, '","').replace(/=/g,'":"') + '"}', function(key, value) { return key===""?value:decodeURIComponent(value) })
+
+    console.log(obj)
+}
+```
+
 ## JavaScript对象复制
 
 ```js

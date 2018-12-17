@@ -289,3 +289,12 @@ input:-webkit-autofill {
     -webkit-text-fill-color: #313a69 !important;
 }
 ```
+
+## 移除 input [type=number]小箭头
+
+```css
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+```
