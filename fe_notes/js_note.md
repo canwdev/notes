@@ -189,7 +189,7 @@ location.href="/"
 ```
 
 ```js
-// --gg--
+// Google 统计
 $(document).ready(function(){
   var ga = document.createElement('script');
   ga.type = 'text/javascript';
