@@ -108,7 +108,7 @@ $(window).load(function() {});
 $(document).ready(function(){})
 ```
 
-## 土制链接解析器（有斜杠bug，别用。）
+## 土制链接解析器v1(bug)
 
 ```js
 var link = 'https://www.example.com/test?arg1=123&argb=456';
@@ -132,33 +132,34 @@ for (var i=0;i<args.length;i++) {
 console.log(attr);      // Object { arg1: "123", argb: "456" }
 ```
 
-## 链接参数解析器
+## 土制链接解析器v2(fix)
 
 ```js
-if (location.search) {
-    var search = location.search.substring(1);
-    var obj = JSON.parse('{"' + search.replace(/&/g, '","').replace(/=/g,'":"') + '"}', function(key, value) { return key===""?value:decodeURIComponent(value) })
+var paramStr = location.search.split('?')[1];
+console.log(paramStr);    // arg1=123&argb=456
 
-    console.log(obj)
+var obj = {};
+var args = paramStr.split('&');
+for (var i=0;i<args.length;i++) {
+  var temp = args[i].split('=');
+  obj[temp[0]] = temp[1];
 }
-```
-
-## JavaScript对象复制
-
-```js
-var oldObj = {
-    aa:1
-}
-var newObj = Object.assign({}, oldObj)
+console.log(obj);      // Object { arg1: "123", argb: "456" }
 ```
 
 ## location.search 解析器
 
 ```js
-var search = location.search.substring(1);
-var obj = JSON.parse('{"' + search.replace(/&/g, '","').replace(/=/g,'":"') + '"}', function(key, value) { return key===""?value:decodeURIComponent(value) })
+if (location.search) {
+    var search = location.search.substring(1);
+    var obj = JSON.parse('{"' + search.replace(/&/g, '","').replace(/=/g,'":"') + '"}', function(key, value) { return key===""?value:decodeURIComponent(value) })
+    console.log(obj)
+}
 ```
 
+## location.search 解析器2
+
+```js
 ```js
 /**
  * 解析url参数
@@ -182,6 +183,16 @@ export function urlParse() {
   return obj;
 };
 
+```
+```
+
+## JavaScript对象复制
+
+```js
+var oldObj = {
+    aa:1
+}
+var newObj = Object.assign({}, oldObj)
 ```
 
 ## IE
