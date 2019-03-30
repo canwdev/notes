@@ -1,4 +1,6 @@
-# Linux 服务端安装SSH服务
+# SSH 笔记
+
+## Linux 服务端安装SSH服务
 
 安装ssh服务器
 
@@ -12,8 +14,19 @@ sudo apt install openssh-server
 sudo /etc/init.d/ssh start
 ```
 
+## 一种简单的公钥登录的方式
 
-# 如何创建ssh秘钥并连接远程服务器
+https://serverfault.com/a/241593
+
+在客户端操作
+
+```sh
+ssh-keygen -t rsa -b 2048
+ssh-copy-id root@xxx.com
+```
+
+
+## 如何创建ssh秘钥并连接远程服务器
 
 在客户端创建秘钥对，会在`~/.ssh/`目录下生成一对秘钥，带`.pub`后缀的是公钥，同名不带的是私钥
 
