@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html {
+            font-size: 50px;
+        }
+
+        #info {
+            font-size: 0.4rem;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="info">
+        <p>outerWidth：{{outerWidth}} px</p>
+        <p>outerHeight：{{outerHeight}} px</p>
+        <hr>
+        <p>innerWidth：{{innerWidth}} px</p>
+        <p>innerHeight：{{innerHeight}} px</p>
+        <hr>
+        <p>{{navigator.userAgent}}</p>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: '#info',
+            data: {
+                outerWidth: null,
+                outerHeight: null,
+                innerWidth: null,
+                innerHeight: null
+            },
+            mounted() {
+                this.getHW();
+                window.addEventListener('resize', () => {
+                    this.getHW()
+                })
+            },
+            methods: {
+                getHW() {
+                    this.outerWidth = window.outerWidth;
+                    this.innerWidth = window.innerWidth;
+                    this.outerHeight = window.outerHeight;
+                    this.innerHeight = window.innerHeight;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
