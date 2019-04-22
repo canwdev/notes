@@ -31,3 +31,9 @@ yarn config set disturl https://npm.taobao.org/dist --global
 sudo apt install @vue/cli
 vue ui
 ```
+
+## node-sass 安装慢
+
+```sh
+npm config set sass_binary_site https://npm.taobao.org/mirrors/node-sass/
+```
