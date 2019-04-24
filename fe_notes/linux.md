@@ -12,3 +12,10 @@ git config --global user.email johndoe@example.com
 ```
 git config --global credential.helper store
 ```
+
+## Ubuntu的Vi/Vim编辑器的方向键变成ABCD问题
+
+```sh
+echo "set nocp" >> ~/.vimrc
+source ~/.vimrc
+```

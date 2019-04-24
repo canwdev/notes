@@ -39,7 +39,7 @@ token = abcd1234567890
 
 https://blog.xinshangshangxin.com/2018/06/18/frp/
 
-添加 `/lib/systemd/system/frps.service`
+添加 `/etc/systemd/system/frps.service`
 
 ```sh
 [Unit]
@@ -68,6 +68,38 @@ systemctl status frps
 运行`frpc -c frpc.ini`可启动客户端服务，
 
 * windows可使用NSSM来实现自动运行服务
+
+### Linux install frpc service
+
+添加 `/etc/systemd/system/frpc.service`
+
+```sh
+[Unit]
+Description=frpc daemon
+After=syslog.target  network.target
+Wants=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/myservice/frp/frpc -c /usr/myservice/frp/frpc.ini
+Restart= always
+RestartSec=1min
+ExecStop=/bin/kill $MAINPID
+
+[Install]
+WantedBy=multi-user.target
+
+```
+
+启用 `frps.service`
+
+```sh
+systemctl enable frps
+systemctl start frps
+systemctl status frps
+
+# systemctl start virtlogd.socket
+```
 
 附上`frpc.ini`内容
 
