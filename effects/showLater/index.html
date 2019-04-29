@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>延迟几秒显示</title>
+  <style>
+    @keyframes fadeIn {
+      0% {
+        opacity: 0
+      }
+
+      80% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1
+      }
+    }
+
+    .element {
+      background: #f00;
+      height: 200px;
+      width: 200px;
+      animation: fadeIn 2s;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="element">
+    test
+  </div>
+</body>
+
+</html>
