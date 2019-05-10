@@ -57,7 +57,7 @@
 
 <body>
 <!-- https://www.apple.com/media/us/mac-pro/2013/16C1b6b5-1d91-4fef-891e-ff2fc1c1bb58/videos/macpro_main_desktop.mp4 -->
-<video id="myVideo" src="./macpro_main_desktop.mp4"></video>
+<video id="myVideo" src="./7813332220425076736.mp4"></video>
 <button id="prev" class="btn"><<</button>
 <button id="next" class="btn">>></button>
 
@@ -78,7 +78,7 @@
 
         if (currentTime > 0) {
 
-          currentTime -= 10
+          currentTime -= 0.5
           TweenLite.to(video, 2, {currentTime: currentTime, ease: Linear.easeInOut})
 
           console.log('退至', currentTime)
@@ -92,7 +92,7 @@
 
         if (currentTime < duration) {
 
-          currentTime += 10
+          currentTime += 0.5
           TweenLite.to(video, 2, {currentTime: currentTime, ease: Linear.easeInOut})
           console.log('进至', currentTime)
         } else {
