@@ -13,6 +13,18 @@ git config --global user.email johndoe@example.com
 git config --global credential.helper store
 ```
 
+## 修改了GitHub/码云账号密码后，git操作提示 `remote: Incorrect username or password ( access token )` 的问题
+
+```sh
+# windows：控制面板删除凭据
+
+# macOS
+git credential-osxkeychain erase
+
+# Linux
+rm ~/.git-credentials
+```
+
 ## Ubuntu的Vi/Vim编辑器的方向键变成ABCD问题
 
 ```sh
