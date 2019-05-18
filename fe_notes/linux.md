@@ -68,3 +68,9 @@ rwx = 4 + 2 + 1 = 7
 rw = 4 + 2 = 6
 rx = 4 +1 = 5
 ```
+
+## Windows 递归修改文件夹权限为Everyone
+
+```cmd
+icacls "D:\CodeArchive" /grant Everyone:M /t
+```
