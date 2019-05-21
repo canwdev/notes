@@ -74,3 +74,30 @@ rx = 4 +1 = 5
 ```cmd
 icacls "D:\CodeArchive" /grant Everyone:M /t
 ```
+
+## git 分支操作
+
+```sh
+# 查看所有分支
+git branch -a
+
+# 当远程分支显示不正常时使用：
+git fetch -p
+
+# 创建分支并切换到
+git checkout -b <分支名>
+
+# 删除本地分支
+git branch -d <分支名>
+
+# 清理远程分支，把本地不存在的远程分支删除
+git remote prune origin
+
+# 推送所有分支到远程
+git push origin '*:*'
+git push origin --all
+
+# 拉取远程所有分支
+git fetch --all
+git pull --all
+```
