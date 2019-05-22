@@ -1,4 +1,15 @@
-# Windows路由表配置：双网卡同时上公司内外网
+# Windows配置：双网卡（WiFi和LAN）选择优先级高的上网
+
+## 推荐使用更简单的方式：直接通过控制面板设置
+
+https://www.windowscentral.com/how-change-priority-order-network-adapters-windows-10
+
+> Quick Tip: The lower the metric number means higher priority, and a higher number indicates lower priority.
+
+![一图解决](windows-dual-link-setup.png)
+
+
+## 其他方法
 
 1. 管理员模式CMD
 2. 路由表解释
@@ -10,6 +21,6 @@
 5. 内网路由，全走有线，192.168.12.1为有线网关
     `route add 192.168.0.0 mask 255.255.0.0 192.168.12.1 –p`
 
-## 其他方法
+## emmm...
 
 直接执行`route delete 0.0.0.0`删除默认路由，然后重新插拔网线即可，但这样似乎不稳定。
