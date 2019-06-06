@@ -37,3 +37,7 @@ vue ui
 ```sh
 npm config set sass_binary_site https://npm.taobao.org/mirrors/node-sass/
 ```
+
+## 加速electron在国内的下载速度
+
+设置环境变量：`export ELECTRON_MIRROR="https://npm.taobao.org/mirrors/electron/"`
