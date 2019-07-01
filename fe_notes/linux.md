@@ -104,3 +104,9 @@ git push origin --all
 git fetch --all
 git pull --all
 ```
+
+## Linux 死机分析与解决
+
+在一些特殊情况下，执行 `git pull` 拉取最新代码时卡死，然后服务器硬盘写入100%，只能重启来解决。
+
+重启之后别忘了手动启动 `pm2` 服务，还有 `docker` 容器 `docker start $(docker ps -a -q)`。
