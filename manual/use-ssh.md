@@ -38,6 +38,7 @@ ssh-keygen
 
 ```
 cat .ssh/id_rsa.pub
+ssh-add
 chmod 0600 .ssh/id_rsa
 ```
 

@@ -110,3 +110,19 @@ git pull --all
 在一些特殊情况下，执行 `git pull` 拉取最新代码时卡死，然后服务器硬盘写入100%，只能重启来解决。
 
 重启之后别忘了手动启动 `pm2` 服务，还有 `docker` 容器 `docker start $(docker ps -a -q)`。
+
+## Mint 安装后配置
+
+首先配置软件源和输入法框架fcitx，打开设置可以找到配置项
+
+```sh
+# 安装完输入法框架后，全局字体会变成楷体，可以安装文泉驿字体解决
+sudo apt install ttf-wqy-zenhei
+
+# Linux Mint 下禁用 Alt 拖拽窗口 
+sudo apt install dconf-tools
+# 然后在 org -> cinnamon > desktop > wm > preferences 下面的 mouse-button-modifier 中修改 <Alt> 变为 <Super> 或者 <Ctrl>。
+
+# 把capslock改为ctrl键
+System Settings →  Keyboard Layouts →  Options → Caps Lock key behavior → Select Make Caps Lock an additional
+```
