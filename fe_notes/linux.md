@@ -1,4 +1,6 @@
-# Linux note
+# System note
+
+> 包括一些常用的系统命令
 
 ## 初始化Git
 
@@ -125,4 +127,19 @@ sudo apt install dconf-tools
 
 # 把capslock改为ctrl键
 System Settings →  Keyboard Layouts →  Options → Caps Lock key behavior → Select Make Caps Lock an additional
+```
+
+## 解决WIN10 1803及以后版本的蓝牙音量（绝对音量）问题
+
+```text
+1、win+r，输入regedit，打开注册表
+2、进入路径：计算机\HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Bluetooth\Audio\AVRCP\CT
+3、找到DisableAbsoluteVolume值，修改为1，如果没有，右键新建DWORD32位，建立对应值。
+4、重启。
+```
+
+## 刷新安卓设备媒体
+
+```sh
+adb shell am broadcast -a android.intent.action.MEDIA_MOUNTED -d file:///sdcard
 ```
