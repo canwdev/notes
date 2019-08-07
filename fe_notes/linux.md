@@ -128,7 +128,7 @@ sudo apt install dconf-tools
 # 把capslock改为ctrl键
 System Settings →  Keyboard Layouts →  Options → Caps Lock key behavior → Select Make Caps Lock an additional
 
-# 解决Linux Mint没声音的问题
+# 解决Linux Mint PC 前面板没声音的问题
 sudo apt-get install pavucontrol
  pavucontrol pavucontrol 
 ```
@@ -145,5 +145,6 @@ sudo apt-get install pavucontrol
 ## 刷新安卓设备媒体
 
 ```sh
+# 如果要彻底重置，请清除 com.android.providers.media 的数据
 adb shell am broadcast -a android.intent.action.MEDIA_MOUNTED -d file:///sdcard
 ```
