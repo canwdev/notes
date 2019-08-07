@@ -125,4 +125,8 @@ sudo apt install dconf-tools
 
 # 把capslock改为ctrl键
 System Settings →  Keyboard Layouts →  Options → Caps Lock key behavior → Select Make Caps Lock an additional
+
+# 解决Linux Mint没声音的问题
+sudo apt-get install pavucontrol
+ pavucontrol pavucontrol 
 ```
