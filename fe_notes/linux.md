@@ -128,9 +128,9 @@ sudo apt install dconf-tools
 # 把capslock改为ctrl键
 System Settings →  Keyboard Layouts →  Options → Caps Lock key behavior → Select Make Caps Lock an additional
 
-# 解决Linux Mint PC 前面板没声音的问题
+# 解决 Linux Mint PC 前面板没声音的问题
 sudo apt-get install pavucontrol
- pavucontrol pavucontrol 
+pavucontrol pavucontrol 
 ```
 
 ## 解决WIN10 1803及以后版本的蓝牙音量（绝对音量）问题
