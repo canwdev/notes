@@ -130,7 +130,15 @@ System Settings →  Keyboard Layouts →  Options → Caps Lock key behavior �
 
 # 解决Linux Mint没声音的问题
 sudo apt-get install pavucontrol
- pavucontrol pavucontrol 
+pavucontrol pavucontrol
+
+# 设置鼠标滚动速度
+sudo apt install imwheel
+## Download the code below http://www.nicknorton.net/mousewheel.sh
+## Save it into your home folder, make it executable. Run it and enjoy.
+
+# 主题美化下载
+https://github.com/topics/cinnamon-theme
 ```
 
 ## 解决WIN10 1803及以后版本的蓝牙音量（绝对音量）问题
