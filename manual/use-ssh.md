@@ -22,7 +22,8 @@ https://serverfault.com/a/241593
 
 ```sh
 ssh-keygen -t rsa -b 2048
-ssh-copy-id root@xxx.com
+# ssh-copy-id root@xxx.com
+ssh-copy-id -i ~/.ssh/id_rsa.pub root@xxx.com
 ```
 
 

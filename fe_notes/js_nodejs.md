@@ -1,5 +1,29 @@
 # JS · Node.js / NPM / Yarn
 
+## Linux 上安装 Node.js
+
+```sh
+# Node 官网已经把 linux 下载版本更改为已编译好的版本了，我们可以直接下载解压后使用：
+wget https://nodejs.org/dist/v10.16.3/node-v10.16.3-linux-x64.tar.xz
+tar xvf node-v10.16.3-linux-x64.tar.xz
+# 将目录移动至 /usr/software/nodejs/
+
+# 设置环境变量（如果使用zsh，vi ~/.zshrc）
+sudo vi /etc/profile
+# 在文件末尾加上：
+# export PATH="$PATH:/usr/sofrware/nodejs/bin"
+# 立即生效（如果使用zsh，source ~/.zshrc）
+source /etc/profile
+
+# 使用 ln 命令来设置软连接(如果设置了环境变量则不需要设置)：
+ln -s /usr/software/nodejs/bin/npm /usr/local/bin/ 
+ln -s /usr/software/nodejs/bin/npx /usr/local/bin/
+ln -s /usr/software/nodejs/bin/node /usr/local/bin/
+# 查看版本
+node -v
+npm -v
+```
+
 ## debian 安装 npm & yarn
 
 ```sh
@@ -47,4 +71,12 @@ npm config set sass_binary_site https://npm.taobao.org/mirrors/node-sass/
 ```sh
 # 方法一：提高系统允许监听文件数
 echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+```
+
+## 升级npm到最新版
+
+```sh
+# 清除npm缓存
+npm cache clean -f
+npm install -g npm
 ```
