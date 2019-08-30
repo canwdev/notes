@@ -52,7 +52,7 @@ yarn config set disturl https://npm.taobao.org/dist --global
 ## 安装VueCLI3
 
 ```sh
-sudo apt install @vue/cli
+sudo npm install @vue/cli -g
 vue ui
 ```
 
