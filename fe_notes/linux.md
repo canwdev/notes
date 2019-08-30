@@ -155,3 +155,47 @@ https://github.com/topics/cinnamon-theme
 # 如果要彻底重置，请清除 com.android.providers.media 的数据
 adb shell am broadcast -a android.intent.action.MEDIA_MOUNTED -d file:///sdcard
 ```
+
+## 一般情况nginx的配置
+
+```sh
+# 编辑配置文件
+vi /etc/nginx/sites-enabled/default
+# 重新加载配置
+nginx -s reload
+```
+
+```txt
+server {
+  listen 8080;
+  server_name localhost;
+
+  location / {
+    autoindex on;
+    root /usr/myservice/app8080/;
+    index index.html;
+  }
+}
+
+
+server {
+  listen 8097;
+  server_name localhost;
+
+  location / {
+    root /root/remo_stock/dist/;
+    index index.html;
+  }
+}
+
+server {
+  listen 8099;
+  server_name localhost;
+
+  location / {
+    root /usr/www/node-blog-management-ui/;
+    index index.html;
+  }
+}
+
+```
