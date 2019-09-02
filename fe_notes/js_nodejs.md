@@ -1,6 +1,19 @@
 # JS · Node.js / NPM / Yarn
 
-## Linux 上安装 Node.js
+## Ubuntu 上安装 Node.js (包管理器)
+
+```sh
+由于目前apt自带的nodejs和npm版本过低，需要添加nodejs官方的源
+# Using Ubuntu
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# Using Debian, as root
+curl -sL https://deb.nodesource.com/setup_10.x | bash -
+apt-get install -y nodejs
+```
+
+## Linux 上安装 Node.js (手动安装)
 
 ```sh
 # Node 官网已经把 linux 下载版本更改为已编译好的版本了，我们可以直接下载解压后使用：
