@@ -21,14 +21,10 @@ Windows可以直接使用懒人包，无需安装，自带配置，[下载 Windo
 
 ## WebUI安装
 
-WebUI是用于管理Aria2服务的图形化界面，这里推荐使用 [webui-aria2](https://github.com/ziahamza/webui-aria2)
+WebUI是用于管理Aria2服务的图形化界面，这里推荐使用AriaNg：
 
-```shell script
-git clone https://github.com/ziahamza/webui-aria2.git
-cd webui-aria2
-# 需要安装 Node.js
-node node-server.js
-```
+- [AriaNg](https://github.com/mayswind/AriaNg)
+- [webui-aria2](https://github.com/ziahamza/webui-aria2)
 
 ## 测试torrent下载速度
 
