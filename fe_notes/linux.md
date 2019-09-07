@@ -149,11 +149,16 @@ https://github.com/topics/cinnamon-theme
 4、重启。
 ```
 
-## 刷新安卓设备媒体
+## 刷新Android设备媒体
 
 ```sh
 # 如果要彻底重置，请清除 com.android.providers.media 的数据
 adb shell am broadcast -a android.intent.action.MEDIA_MOUNTED -d file:///sdcard
+```
+
+## 关闭Android网络检测（网络图标感叹号）
+```sh
+adb shell "settings put global captive_portal_detection_enabled 0"
 ```
 
 ## 一般情况nginx的配置
