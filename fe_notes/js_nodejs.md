@@ -6,7 +6,7 @@
 由于目前apt自带的nodejs和npm版本过低，需要添加nodejs官方的源
 # Using Ubuntu
 curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-sudo apt-get install -y nodejs
+sudo apt install -y nodejs
 
 # Using Debian, as root
 curl -sL https://deb.nodesource.com/setup_10.x | bash -

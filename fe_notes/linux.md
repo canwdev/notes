@@ -32,6 +32,7 @@ rm ~/.git-credentials
 ```sh
 echo "set nocp" >> ~/.vimrc
 source ~/.vimrc
+# 或者 cp /etc/vim/vimrc ~/.vimrc
 ```
 
 ## Ubuntu安装wine
@@ -203,4 +204,24 @@ server {
   }
 }
 
+```
+
+## Linux配置CPU调度
+
+```sh
+# 使用root执行
+apt install cpufrequtils
+# 查看全部CPU状态
+cpufreq-info
+# 查看支持的调度方式
+cpufreq-info -g
+# 设置调度方式
+cpufreq-set -g powersave
+```
+
+## Linux配置ssh命令在后台运行
+
+```sh
+# 建议使用root权限运行，日志会输出到当前目录 nohup.out
+nohup <command> &
 ```
