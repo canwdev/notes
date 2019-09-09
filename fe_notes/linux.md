@@ -108,11 +108,13 @@ git fetch --all
 git pull --all
 ```
 
-## Linux 死机分析与解决
+## Linux(阿里云Ubuntu) 死机分析与解决
 
 在一些特殊情况下，执行 `git pull` 拉取最新代码时卡死，然后服务器硬盘写入100%，只能重启来解决。
 
-重启之后别忘了手动启动 `pm2` 服务，还有 `docker` 容器 `docker start $(docker ps -a -q)`。
+重启之后别忘了检查 `pm2` 服务，还有 `docker` 容器 `docker start $(docker ps -a -q)`。
+
+重启前尽可能`pm2 save`!
 
 ## Mint 安装后配置
 
@@ -160,50 +162,6 @@ adb shell am broadcast -a android.intent.action.MEDIA_MOUNTED -d file:///sdcard
 ## 关闭Android网络检测（网络图标感叹号）
 ```sh
 adb shell "settings put global captive_portal_detection_enabled 0"
-```
-
-## 一般情况nginx的配置
-
-```sh
-# 编辑配置文件
-vi /etc/nginx/sites-enabled/default
-# 重新加载配置
-nginx -s reload
-```
-
-```txt
-server {
-  listen 8080;
-  server_name localhost;
-
-  location / {
-    autoindex on;
-    root /usr/myservice/app8080/;
-    index index.html;
-  }
-}
-
-
-server {
-  listen 8097;
-  server_name localhost;
-
-  location / {
-    root /root/remo_stock/dist/;
-    index index.html;
-  }
-}
-
-server {
-  listen 8099;
-  server_name localhost;
-
-  location / {
-    root /usr/www/node-blog-management-ui/;
-    index index.html;
-  }
-}
-
 ```
 
 ## Linux配置CPU调度
